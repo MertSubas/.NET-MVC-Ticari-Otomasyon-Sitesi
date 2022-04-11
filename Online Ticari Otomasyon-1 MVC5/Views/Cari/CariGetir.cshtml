@@ -1,0 +1,30 @@
+﻿@model Online_Ticari_Otomasyon_1_MVC5.Models.Siniflar.Cariler
+@{
+    ViewBag.Title = "CariGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Cari Güncelleme Sayfası</h2>
+<br />
+@using(Html.BeginForm("CariGuncelle","Cari",FormMethod.Post))
+            {
+<div class="form-group">
+    @Html.HiddenFor(x => x.CariID)
+    @Html.LabelFor(x => x.CariAD)
+    @Html.TextBoxFor(x => x.CariAD, new { @class = "form-control" })
+    @*Burdansonrraki enfazla 30 karakter yazabilirsiniz uyarısıdır*@
+    @Html.ValidationMessageFor(x => x.CariAD, "", new { @style = "Color:Red" })
+    <br />
+    @Html.LabelFor(x => x.CariSoyad)
+    @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariSoyad, "", new { @style = "Color:Red" })
+    <br />
+    @Html.LabelFor(x => x.CariSehir)
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CariMail)
+    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-default" style="background-color:yellowgreen"> Güncelle</button>
+</div>
+            }

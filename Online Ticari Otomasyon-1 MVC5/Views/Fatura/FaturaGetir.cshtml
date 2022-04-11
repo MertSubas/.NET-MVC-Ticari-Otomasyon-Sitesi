@@ -1,0 +1,47 @@
+﻿@model Online_Ticari_Otomasyon_1_MVC5.Models.Siniflar.Faturalar
+@{
+    ViewBag.Title = "FaturaGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Fatura Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("FaturaGuncelle", "Fatura", FormMethod.Post))
+
+{
+    @Html.HiddenFor(x => x.FaturaID)
+    @Html.LabelFor(x => x.FaturaSeriNo)
+    <br />
+    @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-controll" })
+    <br />
+    @Html.LabelFor(x => x.FaturaSiraNo)
+    <br />
+    @Html.TextBoxFor(x => x.FaturaSiraNo, new { @class = "form-controll" })
+    <br />
+    @Html.LabelFor(x => x.VergiDairesi)
+    <br />
+    @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-controll" })
+    <br />
+    @Html.LabelFor(x => x.FaturaTarih)
+    <br />
+    @Html.TextBoxFor(x => x.FaturaTarih, new { @class = "form-controll" })
+    <br />
+    @Html.LabelFor(x => x.Saat)
+    <br />
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-controll" })
+    <br />
+    @Html.LabelFor(x => x.Toplam)
+    <br />
+    @Html.TextBoxFor(x => x.Toplam, new { @class = "form-controll" })
+    <br />
+    @Html.LabelFor(x => x.TeslimEden)
+    <br />
+    @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-controll" })
+    <br />
+    @Html.LabelFor(x => x.TeslimAlan)
+    <br />
+    @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-controll" })
+    <br />
+    <button class="btn btn-warning"> Güncelle</button>
+}
